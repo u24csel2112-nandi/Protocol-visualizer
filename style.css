@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.panel {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.left-panel {
+    border-right: 2px solid #ccc;
+    background-color: #fff;
+}
+
+.right-panel {
+    background-color: #eef;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #eee;
+}
+
+.tab-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.tab-content {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+input, textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.controls button {
+    width: auto;
+    margin-right: 5px;
+    background-color: #17a2b8;
+}
+
+.controls button:hover {
+    background-color: #138496;
+}
+
+.activity-log {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+#logList {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.visualization-area {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    min-height: 400px;
+}
+
+.message-box {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.message-box.visible {
+    opacity: 1;
+}
+
+.client-msg {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+.server-msg {
+    background-color: #cce5ff;
+    border-right: 5px solid #007bff;
+    text-align: right;
+}

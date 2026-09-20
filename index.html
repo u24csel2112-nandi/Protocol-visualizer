@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol Visualizer Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel: Activity Panel -->
+        <div class="panel left-panel">
+            <h2>Activity Panel</h2>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('browsing')">Browsing</button>
+                <button class="tab-btn" onclick="showTab('mail')">Mail</button>
+                <button class="tab-btn" onclick="showTab('streaming')">Streaming</button>
+            </div>
+
+            <!-- Browsing Tab -->
+            <div id="browsing" class="tab-content active">
+                <h3>Web Browsing</h3>
+                <input type="text" id="urlInput" placeholder="Enter URL (e.g., www.example.com)">
+                <button onclick="startSimulation('browsing')">Visit</button>
+            </div>
+
+            <!-- Mail Tab -->
+            <div id="mail" class="tab-content">
+                <h3>Send Email</h3>
+                <input type="text" id="mailTo" placeholder="To:">
+                <input type="text" id="mailSubject" placeholder="Subject:">
+                <textarea id="mailBody" placeholder="Body..." rows="4"></textarea>
+                <button onclick="startSimulation('mail')">Send</button>
+            </div>
+
+            <!-- Streaming Tab -->
+            <div id="streaming" class="tab-content">
+                <h3>Video Streaming</h3>
+                <select id="streamQuality">
+                    <option value="1080p">1080p</option>
+                    <option value="720p">720p</option>
+                    <option value="480p">480p</option>
+                </select>
+                <button onclick="startSimulation('streaming')">Play</button>
+            </div>
+
+            <div class="activity-log">
+                <h3>Activity Log</h3>
+                <ul id="logList"></ul>
+            </div>
+        </div>
+
+        <!-- Right Panel: Protocol Visualization -->
+        <div class="panel right-panel">
+            <h2>Protocol Visualization</h2>
+            
+            <div class="controls">
+                <button onclick="prevStep()">Previous</button>
+                <button id="playPauseBtn" onclick="togglePlayPause()">Pause</button>
+                <button onclick="nextStep()">Next</button>
+                <button onclick="replaySimulation()">Replay</button>
+            </div>
+
+            <div class="visualization-area" id="visArea">
+                <p class="placeholder">Select an activity to start visualization...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
